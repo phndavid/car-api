@@ -6,6 +6,7 @@ const config = require('./config/config.js');
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
+const bcrypt = require('bcrypt');
 const mysql = require('mysql');
 const router = express.Router()
 // Load controllers
@@ -37,7 +38,9 @@ app.listen(port, () => {});
 router.post('/auth/signin', (req, res) => {
   userController.signin(req,res, connection);
 });
+
 router.get('/users', (req, res) => {
+
 
 });
 
